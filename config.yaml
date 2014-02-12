@@ -8,6 +8,7 @@ options:
       .
         ovs - OpenVSwitch
         nvp - Nicira NVP
+        n1kv - Cisco N1kv
   ext-port:
     type: string
     description: |
@@ -48,4 +49,19 @@ options:
   rabbit-vhost:
     type: string
     default: openstack
-
+  n1kv-source:
+    type: string
+    default: distro
+    description: |
+      Optional configuration to support use of additional sources such as:
+      .
+        - ppa:myteam/ppa
+        - deb http://my.archive.com/ubuntu main|KEYID
+      .
+      Note that this is used only for Cisco n1kv plugin.
+  l3-agent:
+    type: string
+    default: enable 
+    description: |
+      Optional configuration to support use of linux router
+      Note that this is used only for Cisco n1kv plugin.
